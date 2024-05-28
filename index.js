@@ -4,11 +4,11 @@ import pg from "pg";
 import 'dotenv/config'
 
 const db = new pg.Client({
-  user: "postgres" || process.env.USER,
-  host: "localhost" || process.env.HOST,
-  database: "world" || process.env.DATABASE,
-  password: "password" || process.env.PASSWORD,
-  port: 5432 || process.env.DBPORT,
+  user:  process.env.USER || "postgres",
+  host: process.env.HOST || "localhost",
+  database: process.env.DATABASE|| "world",
+  password: process.env.PASSWORD || "password" ,
+  port: process.env.DBPORT || 5432,
 });
 
 const app = express();
